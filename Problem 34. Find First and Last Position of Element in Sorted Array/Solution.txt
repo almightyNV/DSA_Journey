@@ -1,0 +1,45 @@
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        
+        int first = findFirst(nums,target);
+        int last = findLast(nums,target);
+        
+        return new int[]{first,last};
+    }
+
+    public static int findFirst(int[] arr, int t) {
+        int idx = -1;
+        int l = 0, r = arr.length-1;
+        while(l <= r) {
+            int mid = l + (r-l)/2;
+
+            if(arr[mid] == t) {
+                idx = mid;
+                r = mid - 1;
+            }
+
+            if(arr[mid] < t) l = mid+1;
+            else r = mid-1;
+        }
+        return idx;
+    }
+
+    public static int findLast(int[] arr, int t) {
+        int idx = -1;
+        int l = 0, r = arr.length-1;
+        while(l <= r) {
+            int mid = l + (r-l)/2;
+
+            if(arr[mid] == t) {
+                idx = mid;
+                l = mid+1;
+            }
+
+            if(arr[mid] > t) r = mid-1;
+            else l = mid+1;
+        }
+        return idx;
+    }
+
+
+}
