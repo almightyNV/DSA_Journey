@@ -1,0 +1,17 @@
+class Solution {
+    public static int minDiff(int[] arr, int t) {
+        int l=0,r=arr.length-1;
+
+        while(l <= r) {
+            int mid = l + (r - l) / 2;
+
+            if(arr[mid] == t) return arr[mid];
+            else if(arr[mid] < t) l = mid+1;
+            else r=mid-1;
+        }
+
+        if((arr[l] - t) < t-arr[r]) return arr[l];
+
+        return arr[r];
+    }
+}
