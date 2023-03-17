@@ -1,0 +1,12 @@
+Given a bitonic sequence of n distinct elements, and an integer x, the task is to write a program to find given element x in the bitonic sequence in O(log n) time. 
+
+A Bitonic Sequence is a sequence of numbers that is first strictly increasing then after a point decreasing.
+
+Examples: 
+
+Input :  arr[] = {-3, 9, 18, 20, 17, 5, 1}, key = 20
+Output : Found at index 3
+
+
+Input :  arr[] = {5, 6, 7, 8, 9, 10, 3, 2, 1}, key = 30
+Output : Not Found
